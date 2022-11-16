@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Hifive1 (Debug)",
+            "device": "FE310",
+            "type": "cortex-debug",
+            "request": "launch", // attach instead of launch, because otherwise flash write is attempted, but fails
+            "servertype": "jlink",
+            // "showDevDebugOutput": "raw",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/target/riscv32imac-unknown-none-elf/debug/hifive1-interrupts",
+            "interface": "jtag",
+            "svdFile": "${workspaceRoot}/hifive.svd",
+            "gdbPath": "${workspaceRoot}/../../Toolchains/riscv32-esp-elf-gcc11_2_0-esp-2022r1-linux-amd64/riscv32-esp-elf/bin/riscv32-esp-elf-gdb", // Set this to point to Espressif's GDB version
+            "toolchainPrefix": "riscv32-esp-elf",
+            /* "openOCDPreConfigLaunchCommands": [
+                "set ESP_RTOS none"
+            ], */
+            //"serverpath": "${workspaceRoot}/../../Toolchains/openocd-esp32-linux-amd64-0.11.0-esp32-20220706/openocd-esp32/bin/openocd",
+            /* "configFiles": [
+                "board/esp32c3-builtin.cfg"
+            ],
+            "overrideAttachCommands": [
+                "set remote hardware-watchpoint-limit 2",
+                "mon halt",
+                "flushregs"
+            ],
+            "overrideRestartCommands": [
+                "mon reset halt",
+                "flushregs",
+                "c",
+            ], */
+        },
+    ]
+}
