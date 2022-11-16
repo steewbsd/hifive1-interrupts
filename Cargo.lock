@@ -56,13 +56,11 @@ dependencies = [
 [[package]]
 name = "e310x-hal"
 version = "0.9.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b261dbfefe6b4dcb3a827441e18b882d2bfa4c5ca559cf7c27ed70a329e22031"
 dependencies = [
  "e310x 0.9.0",
  "embedded-hal",
  "nb 1.0.0",
- "riscv 0.6.0",
+ "riscv 0.7.0",
 ]
 
 [[package]]
@@ -78,8 +76,6 @@ dependencies = [
 [[package]]
 name = "hifive1"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f3f660a0f39d48a1b0c8b6da4008573a93545d778e9ece62640991f63b28730"
 dependencies = [
  "e310x-hal",
  "embedded-hal",
@@ -180,6 +176,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2f0b705d428e9d0f78e2bb73093887ee58a83c9688de3faedbb4c0631c4618e"
 dependencies = [
  "bare-metal 0.2.5",
+ "bit_field",
+ "riscv-target",
+]
+
+[[package]]
+name = "riscv"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6907ccdd7a31012b70faf2af85cd9e5ba97657cc3987c4f13f8e4d2c2a088aba"
+dependencies = [
+ "bare-metal 1.0.0",
  "bit_field",
  "riscv-target",
 ]
