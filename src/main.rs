@@ -36,6 +36,8 @@ unsafe extern "C" fn MachineExternal() {
     match intr {
         Interrupt::RTC => {
             led_interrupt();
+            let rtc = &*hifive1::hal::e310x::RTC::ptr();
+            rtc.rtccmp.modify(|r, w| w.bits(r.bits() + 65536));
         }
         _ => {
             sprintln!("We received an interrupt we don't know how to handle");
